@@ -9,7 +9,7 @@ $(document).ready(function(){
         },
         {
             nome : 'ducati',
-            peso : 50
+            peso : 65
         },
         {
             nome : 'piaggio',
