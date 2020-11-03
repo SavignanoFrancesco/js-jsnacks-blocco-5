@@ -22,8 +22,25 @@ $(document).ready(function(){
         },
     ];
 
+    console.log(lista_candidati);
+
     //copio il primo array in un secondo array
-    var assegnazione_candidati = lista_candidati;
+    var assegnazione_candidati = [];
+
+    //scorro l'array iniziale per copiarne ogni oggetto
+    for (var i = 0; i < lista_candidati.length; i++) {
+        //prendo l'oggetto in posizione i dell'array originale
+        var oggetto_corrente = lista_candidati[i];
+        //inizializzo l'oggetto copiato
+        var oggetto_copia = {};
+        //scorro l'oggetto in posizione i
+        for(var key in oggetto_corrente){
+            //copio l'oggetto originale in un oggetto copia
+            oggetto_copia[key] = oggetto_corrente[key];
+        }
+        //pusho l'oggetto copiato nel nuovo array
+        assegnazione_candidati.push(oggetto_copia);
+    }
 
     //array utile a controllare che non venga assegnata la stessa lettera a più candidati
     var controllo_ripetizioni = [];
